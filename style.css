@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pixelify+Sans:wght@400..700&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url("img/backgrounds/img-background.jpg") no-repeat center center fixed;
+    background-size: cover; /* cobre toda a tela */
+    font-family: 'Pixelify Sans', sans-serif; /* fonte padrão */
+    color: white; /* cor do texto */
+}
+
+/* Centralizar logo no topo */
+header {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2; /* fica acima do fundo */
+}
+
+.logo {
+    width: 800px;
+    margin: 30px 0;  /* espaço acima e abaixo da logo */
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 40px; /* espaço entre as imagens */
+    max-width: 1000px; /* largura máxima da galeria */
+    margin: auto; /* centraliza na tela */
+
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+
+    padding: 30px;        /* dá espaço interno */
+    border-radius: 20px;  /* deixa as bordas arredondadas */
+}
+
+
+.galeria figure {
+    text-align: center;
+}
+
+.galeria img {
+    width: 100%;
+    max-width: 300px; /* limita tamanho */
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+
+figure {
+    text-align: center;
+    margin: 0;
+}
+
+figure img {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    border-radius: 10px;
+}
+
+figcaption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: white;
+}
+
+/* Lightbox escondido por padrão */
+#lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 100;
+}
+
+#lightbox img {
+  max-width: 80%;
+  max-height: 70%;
+  border-radius: 10px;
+}
+
+#lightbox p {
+  color: white;
+  margin-top: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Mostrar lightbox */
+#lightbox.show {
+  visibility: visible;;
+  opacity: 1;
+}
+
+.galeria img {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    border-radius: 10px;
+
+    /* efeito hover */
+    transition: transform 0.3s ease; /* animação suave */
+    cursor: pointer;                /* mãozinha ao passar o mouse */
+}
+
+.galeria img:hover {
+    transform: scale(1.1);          /* aumenta 10% */
+}
+
+.caption {
+    font-family: 'Pixelify Sans', sans-serif; /* usa a fonte importada */
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+}
+
+
